@@ -1,0 +1,6 @@
+Results using Quality as target (with columns = ['width','height','weight_in_kg','Quality']):
+
+
+score: -0.16616137619917448
+MAE is 1.6232808427294425
+MSE is 4.203064184627746
