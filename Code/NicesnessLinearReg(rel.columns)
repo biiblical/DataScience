@@ -56,12 +56,6 @@ print(feature_importance)
 # RESULTS (check for plots):
 # cannot be predicted with any model
 # 0
-# 1.0
-# MAE is 1.6131597952679575
-# MSE is 4.078766495687647
-#       Feature  Coefficient
-# 0       width     1.000000
-# 1      height    -0.001525
-# 2    pressure     0.026100
-# 3       karma     0.000037
-# 4  modulation    -0.005420
+# 0.9926695902093675
+# MAE is 1962153.722058593
+# MSE is 2046767671092193.8

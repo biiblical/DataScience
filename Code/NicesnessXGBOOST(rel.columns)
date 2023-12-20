@@ -5,12 +5,21 @@ from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from xgboost import XGBRegressor
 
-df = pd.read_csv('C:/Users/alek2/Documents/GitHub/DataScience/data/manufacturing_Task_01.csv')
+#df = pd.read_csv('C:/Users/alek2/Documents/GitHub/DataScience/data/manufacturing_Task_01.csv')
 
 # Exclude 'FluxCompensation' and 'ionizationclass'
-X = df.drop(['id','weight_in_kg', 'weight_in_g', 'error', 'error_type', 'multideminsionality', 'Quality', 'reflectionScore',
-             'distortion', 'nicesness', 'multideminsionality', 'ionizationclass', 'FluxCompensation'], axis=1)
-y = df['nicesness']
+#X = df.drop(['id','weight_in_kg', 'weight_in_g', 'error', 'error_type', 'multideminsionality', 'Quality', 'reflectionScore',
+ #             'distortion', 'nicesness', 'multideminsionality', 'ionizationclass', 'FluxCompensation'], axis=1)
+#y = df['nicesness']
+
+df = pd.read_csv('C:/Users/alek2/Documents/GitHub/DataScience/data/manufacturing_Task_01.csv')
+columns = ['width','weight_in_kg','weight_in_g', 'nicesness']
+df = df.loc[:, columns]
+features = ['width','weight_in_g','weight_in_kg']
+target = ['nicesness']
+
+X = df.loc[:, features]
+y = df.loc[:, target]
 
 # Check for missing values in 'nicesness'
 print(df['nicesness'].isnull().sum())
@@ -49,12 +58,10 @@ print(feature_importance)
 # RESULTS:
 # also not predictable with XGBoost Regression, although importances look a bit more normal than usual, accuracy also very low instead of 99%
 # 0
-# 0.26843861619512277
-# MAE is 28825197.785389636
-# MSE is 2.0426364044541245e+17
-#       Feature  Importance
-# 0       width    0.289825
-# 1      height    0.126941
-# 2    pressure    0.242304
-# 3       karma    0.128520
-# 4  modulation    0.212410
+# 0.46994441195370273
+# MAE is 23200001.48959414
+# MSE is 1.4799999897431533e+17
+#         Feature  Importance
+# 0         width     0.04161
+# 1   weight_in_g     0.95839
+# 2  weight_in_kg     0.00000
