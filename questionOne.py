@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
 
-df = pd.read_csv('DataScience/data/manufacturing_Task_01.csv.csv')
+df = pd.read_csv('C:/Users/alek2/Documents/GitHub/DataScience/data/manufacturing_Task_01.csv')
 columns = ['width','height','weight_in_kg','Quality']
 df = df.loc[:, columns]
 features = ['width','height','weight_in_kg']
@@ -19,7 +19,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, train
 
 model = XGBRegressor()
 model.fit(X_train, y_train)
-predictions3 = reg.predict(X_test)
+predictions3 = model.predict(X_test)
 score = model.score(X_test, y_test)
 print(score)
 plt.scatter(y_test, predictions3)

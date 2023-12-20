@@ -11,12 +11,12 @@ from sklearn.metrics import confusion_matrix
 
 print('Hello world')
 # Read the dataset into a dataframe
-dataSet = pd.read_csv('./data/SmartBuild.csv')
+dataSet = pd.read_csv('C:/Users/alek2/Documents/GitHub/DataScience/data/manufacturing_Task_01.csv')
 
 # Select Durchmesser, Hoehe and Gewicht as the X data.
-X = dataSet[["Durchmesser", "Hoehe", "Gewicht"]]
+X = dataSet[["width", "height", "weight_in_kg"]]
 # Set the Y data to Y data
-y = dataSet.Fehler == 'nein'
+y = dataSet.error == 'no'
 
 # Save the X and Y data to csv files, so I can check the data quality
 X.to_csv('FilteredDataInput.csv')
