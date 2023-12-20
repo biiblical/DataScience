@@ -1,0 +1,60 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import metrics
+from sklearn.model_selection import train_test_split
+from xgboost import XGBRegressor
+
+df = pd.read_csv('C:/Users/alek2/Documents/GitHub/DataScience/data/manufacturing_Task_01.csv')
+
+# Exclude 'FluxCompensation' and 'ionizationclass'
+X = df.drop(['id','weight_in_kg', 'weight_in_g', 'error', 'error_type', 'multideminsionality', 'Quality', 'reflectionScore',
+              'distortion', 'nicesness', 'multideminsionality', 'ionizationclass', 'FluxCompensation'], axis=1)
+y = df['nicesness']
+
+# Check for missing values in 'nicesness'
+print(df['nicesness'].isnull().sum())
+
+# Remove rows with missing or non-numeric values in 'nicesness'
+df_nicesness = df.dropna(subset=['nicesness'])
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, train_size=.50)
+
+# Use XGBRegressor instead of DecisionTreeRegressor
+xgb = XGBRegressor(random_state=42)
+model = xgb.fit(X_train, y_train)
+predictions = xgb.predict(X_test)
+score = xgb.score(X_test, y_test)
+print(score)
+
+plt.scatter(y_test, predictions)
+plt.axline([0, 0], [1, 1], dashes=[6, 2], c='red', alpha=0.5)
+plt.xlabel("True Values")
+plt.ylabel("Predictions")
+plt.show()
+
+mae = metrics.mean_absolute_error(y_test, predictions)
+mse = metrics.mean_squared_error(y_test, predictions)
+print('MAE is {}'.format(mae))
+print('MSE is {}'.format(mse))
+
+# Extract feature names from X_train.columns
+features = X_train.columns
+
+# Create a DataFrame with feature importance
+feature_importance = pd.DataFrame({'Feature': features, 'Importance': xgb.feature_importances_})
+print(feature_importance)
+
+
+# RESULTS:
+# also not predictable with XGBoost Regression, although importances look a bit more normal than usual, accuracy also very low instead of 99%
+# 0
+# 0.26843861619512277
+# MAE is 28825197.785389636
+# MSE is 2.0426364044541245e+17
+#       Feature  Importance
+# 0       width    0.289825
+# 1      height    0.126941
+# 2    pressure    0.242304
+# 3       karma    0.128520
+# 4  modulation    0.212410
