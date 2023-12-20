@@ -7,9 +7,9 @@ There is 6.6 minutes to showcase what we have.
 That is 2-3 minutes for each slide. You should have 3-4 for team memeber for a total of 20 minutes.
 
 * Team  
-    * Aly
-    * Finnian
-    * Arran
+    * Alek
+    * Mahnoor
+    * Tringe
 
 ### Main Libraries
 * Pyplot
@@ -22,11 +22,11 @@ That is 2-3 minutes for each slide. You should have 3-4 for team memeber for a t
 * Scipy
 
 ## Questions - outputs to predict
-* Q1 - Implement a prediction model for "Qualität"​​
-    * Qualität - Quality
+* Q1 - Implement a prediction model for "Quality"​​
+    * Quality
 * Q1.1 - Implement a prediction model for "Warpfaktor"
     * Warp factor
-* Q2 - Implement a prediction model for "Fehler"​
+* Q2 - Implement a prediction model for "Error"​
     * Errors
 * Q2.1 - implement a prediction model for "Gammawert"
     * Gamma value
