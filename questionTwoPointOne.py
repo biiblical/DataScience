@@ -11,11 +11,11 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 
 
-dataSet = pd.read_csv('./data/SmartBuild.csv')
+dataSet = pd.read_csv('C:/Users/alek2/Documents/GitHub/DataScience/data/manufacturing_Task_01.csv')
 
-X = dataSet[["Durchmesser", "Hoehe", "Gewicht"]]
-y = dataSet.Gammawert
-y.to_csv('Gammawert.csv')
+X = dataSet[["width", "height", "weight_in_kg"]]
+y = dataSet.distortion
+y.to_csv('distortion.csv')
 
 
 Xtrain, Xtest, Ytrain, Ytest = train_test_split(X, y, test_size=0.2, random_state=42, shuffle=True)
