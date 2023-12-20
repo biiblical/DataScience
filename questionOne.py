@@ -6,11 +6,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
 
-df = pd.read_csv('./data/SmartBuild.csv')
-columns = ['Durchmesser','Hoehe','Gewicht','Qualitaet']
+df = pd.read_csv('DataScience/data/manufacturing_Task_01.csv.csv')
+columns = ['width','height','weight_in_kg','Quality']
 df = df.loc[:, columns]
-features = ['Durchmesser','Hoehe','Gewicht']
-target = ['Qualitaet']
+features = ['width','height','weight_in_kg']
+target = ['Quality']
 
 X = df.loc[:, features]
 y = df.loc[:, target]
