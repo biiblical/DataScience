@@ -1,7 +1,7 @@
 # Data science prediction for SmartBuild
 Using data to predict the quality of products based on input parameters.
 
-> **Presentation PDF located ![here!]()**
+> **Presentation PDF located ![here!](https://github.com/biiblical/DataScience/blob/main/SmartBuild.pdf)**
 
 * Team  
     * Alek
