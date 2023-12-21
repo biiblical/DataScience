@@ -23,8 +23,6 @@ That is 2-3 minutes for each slide. You should have 3-4 for team memeber for a t
 ## Questions - outputs to predict
 * Q1 - Implement a prediction model for "weight_in_kg"​​
     * weight_in_kg
-* Q1.1 - Implement a prediction model for "Warpfaktor"
-    * Warp factor
 * Q2.1 - implement a prediction model for "error"
     * XGBClassifier & RandomForestClassifier
 * Q2.2- Implement a prediction model for "error-type"​
