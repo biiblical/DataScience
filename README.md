@@ -1,10 +1,7 @@
 # Data science prediction for SmartBuild
 Using data to predict the quality of products based on input parameters.
 
-> **Presentation PDF located ![here!](https://github.com/FinnianHBLR/data-science-prediction/blob/50fab79bcdbc387256ffc99b0cdaae51f9dcc462/Presentation.pdf)**
-
-There is 6.6 minutes to showcase what we have.
-That is 2-3 minutes for each slide. You should have 3-4 for team memeber for a total of 20 minutes.
+> **Presentation PDF located ![here!]()**
 
 * Team  
     * Alek
@@ -14,6 +11,7 @@ That is 2-3 minutes for each slide. You should have 3-4 for team memeber for a t
 ### Main Libraries
 * Pyplot
 * Sklearn
+* Seaborn
 * Matplotlib
 * Pandas
 * Numpy
